@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		2080E28B1D902D5000FEC8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E28A1D902D5000FEC8A7 /* AppDelegate.swift */; };
 		2080E28D1D902D5000FEC8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E28C1D902D5000FEC8A7 /* ViewController.swift */; };
-		2080E2901D902D5000FEC8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080E28E1D902D5000FEC8A7 /* Main.storyboard */; };
-		2080E2931D902D5000FEC8A7 /* iStatistics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2911D902D5000FEC8A7 /* iStatistics.xcdatamodeld */; };
-		2080E2951D902D5000FEC8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2941D902D5000FEC8A7 /* Assets.xcassets */; };
-		2080E2981D902D5000FEC8A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2961D902D5000FEC8A7 /* LaunchScreen.storyboard */; };
 		2080E2A31D902D5000FEC8A7 /* iStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2A21D902D5000FEC8A7 /* iStatisticsTests.swift */; };
 		2080E2AE1D902D5000FEC8A7 /* iStatisticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2AD1D902D5000FEC8A7 /* iStatisticsUITests.swift */; };
+		2080E2C21D9030E000FEC8A7 /* iStatistics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2C01D9030E000FEC8A7 /* iStatistics.xcdatamodeld */; };
+		2080E2C61D90310600FEC8A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2C31D90310600FEC8A7 /* Assets.xcassets */; };
+		2080E2C81D90310600FEC8A7 /* testData.json in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2C51D90310600FEC8A7 /* testData.json */; };
+		2080E2CC1D90314600FEC8A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2CA1D90314600FEC8A7 /* LaunchScreen.storyboard */; };
+		2080E2CD1D90314600FEC8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2080E2CB1D90314600FEC8A7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +39,6 @@
 		2080E2871D902D5000FEC8A7 /* iStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2080E28A1D902D5000FEC8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2080E28C1D902D5000FEC8A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2080E28F1D902D5000FEC8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2080E2921D902D5000FEC8A7 /* iStatistics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iStatistics.xcdatamodel; sourceTree = "<group>"; };
-		2080E2941D902D5000FEC8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2080E2971D902D5000FEC8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2080E2991D902D5000FEC8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2080E29E1D902D5000FEC8A7 /* iStatisticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iStatisticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2080E2A21D902D5000FEC8A7 /* iStatisticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iStatisticsTests.swift; sourceTree = "<group>"; };
@@ -49,6 +46,11 @@
 		2080E2A91D902D5000FEC8A7 /* iStatisticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iStatisticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2080E2AD1D902D5000FEC8A7 /* iStatisticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iStatisticsUITests.swift; sourceTree = "<group>"; };
 		2080E2AF1D902D5000FEC8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2080E2C11D9030E000FEC8A7 /* test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = test.xcdatamodel; sourceTree = "<group>"; };
+		2080E2C31D90310600FEC8A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resourses/Assets.xcassets; sourceTree = "<group>"; };
+		2080E2C51D90310600FEC8A7 /* testData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = testData.json; path = Resourses/testData.json; sourceTree = "<group>"; };
+		2080E2CA1D90314600FEC8A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Resourses/Storyboard/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2080E2CB1D90314600FEC8A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Resourses/Storyboard/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +101,15 @@
 		2080E2891D902D5000FEC8A7 /* iStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				2080E2C01D9030E000FEC8A7 /* iStatistics.xcdatamodeld */,
 				2080E28A1D902D5000FEC8A7 /* AppDelegate.swift */,
-				2080E28C1D902D5000FEC8A7 /* ViewController.swift */,
-				2080E28E1D902D5000FEC8A7 /* Main.storyboard */,
-				2080E2941D902D5000FEC8A7 /* Assets.xcassets */,
-				2080E2961D902D5000FEC8A7 /* LaunchScreen.storyboard */,
+				2080E2BD1D902DF200FEC8A7 /* Controller */,
 				2080E2991D902D5000FEC8A7 /* Info.plist */,
-				2080E2911D902D5000FEC8A7 /* iStatistics.xcdatamodeld */,
+				2080E2BB1D902DC000FEC8A7 /* Mdel */,
+				2080E2BF1D902E1A00FEC8A7 /* Resourses */,
+				2080E2BE1D902DFC00FEC8A7 /* Utils */,
+				2080E2BC1D902DE300FEC8A7 /* ViewController */,
+				2080E28C1D902D5000FEC8A7 /* ViewController.swift */,
 			);
 			path = iStatistics;
 			sourceTree = "<group>";
@@ -126,6 +130,53 @@
 				2080E2AF1D902D5000FEC8A7 /* Info.plist */,
 			);
 			path = iStatisticsUITests;
+			sourceTree = "<group>";
+		};
+		2080E2BB1D902DC000FEC8A7 /* Mdel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mdel;
+			sourceTree = "<group>";
+		};
+		2080E2BC1D902DE300FEC8A7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		2080E2BD1D902DF200FEC8A7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2080E2BE1D902DFC00FEC8A7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		2080E2BF1D902E1A00FEC8A7 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				2080E2C91D90311B00FEC8A7 /* Storyboard */,
+				2080E2C31D90310600FEC8A7 /* Assets.xcassets */,
+				2080E2C51D90310600FEC8A7 /* testData.json */,
+			);
+			name = Resourses;
+			sourceTree = "<group>";
+		};
+		2080E2C91D90311B00FEC8A7 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2080E2CA1D90314600FEC8A7 /* LaunchScreen.storyboard */,
+				2080E2CB1D90314600FEC8A7 /* Main.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +289,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2080E2981D902D5000FEC8A7 /* LaunchScreen.storyboard in Resources */,
-				2080E2951D902D5000FEC8A7 /* Assets.xcassets in Resources */,
-				2080E2901D902D5000FEC8A7 /* Main.storyboard in Resources */,
+				2080E2CC1D90314600FEC8A7 /* LaunchScreen.storyboard in Resources */,
+				2080E2C81D90310600FEC8A7 /* testData.json in Resources */,
+				2080E2C61D90310600FEC8A7 /* Assets.xcassets in Resources */,
+				2080E2CD1D90314600FEC8A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +319,7 @@
 			files = (
 				2080E28D1D902D5000FEC8A7 /* ViewController.swift in Sources */,
 				2080E28B1D902D5000FEC8A7 /* AppDelegate.swift in Sources */,
-				2080E2931D902D5000FEC8A7 /* iStatistics.xcdatamodeld in Sources */,
+				2080E2C21D9030E000FEC8A7 /* iStatistics.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,25 +353,6 @@
 			targetProxy = 2080E2AA1D902D5000FEC8A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		2080E28E1D902D5000FEC8A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2080E28F1D902D5000FEC8A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2080E2961D902D5000FEC8A7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2080E2971D902D5000FEC8A7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2080E2B01D902D5000FEC8A7 /* Debug */ = {
@@ -538,12 +571,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2080E2911D902D5000FEC8A7 /* iStatistics.xcdatamodeld */ = {
+		2080E2C01D9030E000FEC8A7 /* iStatistics.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2080E2921D902D5000FEC8A7 /* iStatistics.xcdatamodel */,
+				2080E2C11D9030E000FEC8A7 /* test.xcdatamodel */,
 			);
-			currentVersion = 2080E2921D902D5000FEC8A7 /* iStatistics.xcdatamodel */;
+			currentVersion = 2080E2C11D9030E000FEC8A7 /* test.xcdatamodel */;
 			path = iStatistics.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
