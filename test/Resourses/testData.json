@@ -1,0 +1,53 @@
+{
+    "statistics": [
+                   {
+                   "base": 0,
+                   "desc": "Что-нибудь",
+                   "sectionRaw": 0,
+                   "settingsRaw": "",
+                   "title": "Стат 1",
+                   "type": 0,
+                   "unit": "руб.",
+                   "field": 0
+                   },
+                   {
+                   "base": 0,
+                   "desc": "Что-нибудь",
+                   "sectionRaw": 0,
+                   "settingsRaw": "",
+                   "title": "Стат 1",
+                   "type": 0,
+                   "unit": "руб.",
+                   "field": 0
+                   },
+                   {
+                   "base": 0,
+                   "desc": "Что-нибудь",
+                   "sectionRaw": 0,
+                   "settingsRaw": {
+                   "mainResult": 0,
+                   "otherResult": [
+                                   1,
+                                   2,
+                                   3
+                                   ]
+                   },
+                   "title": "Стат 3",
+                   "type": 0,
+                   "unit": "руб.",
+                   "field": 0
+                   },
+                   {
+                   "base": 5889,
+                   "desc": "Что-нибудь",
+                   "sectionRaw": 0,
+                   "settingsRaw": {
+                   "mainResult": 1
+                   },
+                   "title": "Стат (таймер)",
+                   "type": 0,
+                   "unit": "руб.",
+                   "field": 0
+                   }
+                   ]
+}
