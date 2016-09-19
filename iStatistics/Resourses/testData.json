@@ -6,48 +6,56 @@
                    "sectionRaw": 0,
                    "settingsRaw": "",
                    "title": "Стат 1",
-                   "type": 0,
-                   "unit": "руб.",
-                   "field": 0
+                   "typeRaw": 2,
+                   "unit": "руб."
                    },
                    {
                    "base": 0,
                    "desc": "Что-нибудь",
                    "sectionRaw": 0,
                    "settingsRaw": "",
-                   "title": "Стат 1",
-                   "type": 0,
-                   "unit": "руб.",
-                   "field": 0
+                   "title": "Стат 4",
+                   "typeRaw": 2,
+                   "unit": "руб."
                    },
                    {
                    "base": 0,
                    "desc": "Что-нибудь",
                    "sectionRaw": 0,
                    "settingsRaw": {
-                   "mainResult": 0,
-                   "otherResult": [
-                                   1,
-                                   2,
-                                   3
-                                   ]
-                   },
+                        "mainResult": 0,
+                        "otherResult": [
+                                        1,
+                                        2,
+                                        3
+                                        ]
+                        },
                    "title": "Стат 3",
-                   "type": 0,
-                   "unit": "руб.",
-                   "field": 0
+                   "typeRaw": 0,
+                   "unit": "шт."
                    },
                    {
                    "base": 5889,
                    "desc": "Что-нибудь",
                    "sectionRaw": 0,
                    "settingsRaw": {
-                   "mainResult": 1
-                   },
+                        "mainResult": 1
+                        },
                    "title": "Стат (таймер)",
-                   "type": 0,
-                   "unit": "руб.",
-                   "field": 0
+                   "typeRaw": 3,
+                   "unit": ""
+                   }
+                   ,
+                   {
+                   "base": 0,
+                   "desc": "Что-нибудь",
+                   "sectionRaw": 0,
+                   "settingsRaw": {
+                        "mainResult": 1
+                        },
+                   "title": "Стат (да\нет)",
+                   "typeRaw": 1,
+                   "unit": ""
                    }
                    ]
 }

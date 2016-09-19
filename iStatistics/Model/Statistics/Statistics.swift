@@ -58,7 +58,7 @@ enum StatisticsSettingsViewType:NSNumber {
 }
 let woodenHelmet = Wearable.Helmet(weight: .Light, armor: .Light)*/
 
-enum StatisticsFieldType:NSNumber {
+enum StatisticsType:NSNumber {
     enum RangeOptionType:NSNumber {
         case Min, Max, Step
         var title: String {
@@ -169,9 +169,9 @@ class Statistics: NSManagedObject {
         return .Other
     }
     
-    var fieldType:StatisticsFieldType {
-        if self.field != nil {
-            return StatisticsFieldType(rawValue: self.field!)!
+    var type:StatisticsType {
+        if self.typeRaw != nil {
+            return StatisticsType(rawValue: self.typeRaw!)!
         }
         return .Value
     }

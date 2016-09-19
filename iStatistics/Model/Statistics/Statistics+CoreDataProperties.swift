@@ -14,7 +14,7 @@ extension Statistics {
     @NSManaged var title: String?
     @NSManaged var desc: String?
     @NSManaged var settingsRaw: String?
-    @NSManaged var type: NSNumber?
+    @NSManaged var typeRaw: NSNumber?
     @NSManaged var unit: String?
     @NSManaged var base: NSNumber?
     @NSManaged var sectionRaw: NSNumber?
