@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Checkpoint" representedClassName=".Checkpoint" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="field" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Field" syncable="YES"/>
+        <relationship name="onetime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Onetime" inverseName="checkpoints" inverseEntity="Onetime" syncable="YES"/>
+    </entity>
+    <entity name="Field" representedClassName=".Field" syncable="YES">
+        <attribute name="canComment" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="requred" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sort" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistics" inverseName="fields" inverseEntity="Statistics" syncable="YES"/>
+    </entity>
+    <entity name="Onetime" representedClassName=".Onetime" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="checkpoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Checkpoint" inverseName="onetime" inverseEntity="Checkpoint" syncable="YES"/>
+        <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistics" inverseName="onetimes" inverseEntity="Statistics" syncable="YES"/>
+    </entity>
+    <entity name="Statistics" representedClassName=".Statistics" syncable="YES">
+        <attribute name="base" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sectionRaw" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="settingsRaw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeRaw" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fields" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Field" inverseName="statistics" inverseEntity="Field" syncable="YES"/>
+        <relationship name="onetimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Onetime" inverseName="statistics" inverseEntity="Onetime" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Checkpoint" positionX="-180" positionY="45" width="128" height="105"/>
+        <element name="Field" positionX="-162" positionY="90" width="128" height="135"/>
+        <element name="Onetime" positionX="-189" positionY="36" width="128" height="90"/>
+        <element name="Statistics" positionX="-63" positionY="-18" width="128" height="180"/>
+    </elements>
+</model>

@@ -20,12 +20,12 @@
 		2080E2F01D904F3900FEC8A7 /* Field+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2EE1D904F3900FEC8A7 /* Field+CoreDataClass.swift */; };
 		2080E2F11D904F3900FEC8A7 /* Field+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2EF1D904F3900FEC8A7 /* Field+CoreDataProperties.swift */; };
 		2080E2F41D90550800FEC8A7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2080E2F31D90550800FEC8A7 /* CoreDataStack.swift */; };
+		A61C8C9A1D916EDF00B6B636 /* Checkpoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C8C981D916EDF00B6B636 /* Checkpoint+CoreDataClass.swift */; };
+		A61C8C9B1D916EDF00B6B636 /* Checkpoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C8C991D916EDF00B6B636 /* Checkpoint+CoreDataProperties.swift */; };
+		A61C8C9E1D916EEB00B6B636 /* Onetime+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C8C9C1D916EEB00B6B636 /* Onetime+CoreDataClass.swift */; };
+		A61C8C9F1D916EEB00B6B636 /* Onetime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61C8C9D1D916EEB00B6B636 /* Onetime+CoreDataProperties.swift */; };
 		A6D845911D90FEA800DC4DC4 /* Statistics+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D8458F1D90FEA800DC4DC4 /* Statistics+CoreDataClass.swift */; };
 		A6D845921D90FEA800DC4DC4 /* Statistics+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D845901D90FEA800DC4DC4 /* Statistics+CoreDataProperties.swift */; };
-		A6D845971D910C5D00DC4DC4 /* Checkpoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D845931D910C5D00DC4DC4 /* Checkpoint+CoreDataClass.swift */; };
-		A6D845981D910C5D00DC4DC4 /* Checkpoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D845941D910C5D00DC4DC4 /* Checkpoint+CoreDataProperties.swift */; };
-		A6D845991D910C5D00DC4DC4 /* Onetime+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D845951D910C5D00DC4DC4 /* Onetime+CoreDataClass.swift */; };
-		A6D8459A1D910C5D00DC4DC4 /* Onetime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D845961D910C5D00DC4DC4 /* Onetime+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +66,13 @@
 		2080E2EF1D904F3900FEC8A7 /* Field+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Field+CoreDataProperties.swift"; path = "Model/Field/Field+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2080E2F21D90507E00FEC8A7 /* iStatistics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iStatistics.xcdatamodel; sourceTree = "<group>"; };
 		2080E2F31D90550800FEC8A7 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Controller/CoreDataStack.swift; sourceTree = "<group>"; };
+		A61C8C981D916EDF00B6B636 /* Checkpoint+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Checkpoint+CoreDataClass.swift"; path = "Model/Checkpoint/Checkpoint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A61C8C991D916EDF00B6B636 /* Checkpoint+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Checkpoint+CoreDataProperties.swift"; path = "Model/Checkpoint/Checkpoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A61C8C9C1D916EEB00B6B636 /* Onetime+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Onetime+CoreDataClass.swift"; path = "Model/Onetime/Onetime+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A61C8C9D1D916EEB00B6B636 /* Onetime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Onetime+CoreDataProperties.swift"; path = "Model/Onetime/Onetime+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A61C8CA01D9172BE00B6B636 /* iStatisticsV2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iStatisticsV2.xcdatamodel; sourceTree = "<group>"; };
 		A6D8458F1D90FEA800DC4DC4 /* Statistics+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Statistics+CoreDataClass.swift"; path = "Model/Statistics/Statistics+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A6D845901D90FEA800DC4DC4 /* Statistics+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Statistics+CoreDataProperties.swift"; path = "Model/Statistics/Statistics+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A6D845931D910C5D00DC4DC4 /* Checkpoint+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Checkpoint+CoreDataClass.swift"; path = "iStatistics/Model/Checkpoint+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A6D845941D910C5D00DC4DC4 /* Checkpoint+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Checkpoint+CoreDataProperties.swift"; path = "iStatistics/Model/Checkpoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		A6D845951D910C5D00DC4DC4 /* Onetime+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Onetime+CoreDataClass.swift"; path = "iStatistics/Model/Onetime+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A6D845961D910C5D00DC4DC4 /* Onetime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Onetime+CoreDataProperties.swift"; path = "iStatistics/Model/Onetime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,10 +103,6 @@
 		2080E27E1D902D5000FEC8A7 = {
 			isa = PBXGroup;
 			children = (
-				A6D845931D910C5D00DC4DC4 /* Checkpoint+CoreDataClass.swift */,
-				A6D845941D910C5D00DC4DC4 /* Checkpoint+CoreDataProperties.swift */,
-				A6D845951D910C5D00DC4DC4 /* Onetime+CoreDataClass.swift */,
-				A6D845961D910C5D00DC4DC4 /* Onetime+CoreDataProperties.swift */,
 				2080E2891D902D5000FEC8A7 /* iStatistics */,
 				2080E2A11D902D5000FEC8A7 /* iStatisticsTests */,
 				2080E2AC1D902D5000FEC8A7 /* iStatisticsUITests */,
@@ -160,6 +157,8 @@
 		2080E2BB1D902DC000FEC8A7 /* Mdel */ = {
 			isa = PBXGroup;
 			children = (
+				A61C8C971D916E8600B6B636 /* Checkpoint */,
+				A61C8C961D916E7B00B6B636 /* Onetime */,
 				2080E2E91D904A1F00FEC8A7 /* Field */,
 				2080E2E21D9045C300FEC8A7 /* Statistics */,
 			);
@@ -224,6 +223,24 @@
 				2080E2EF1D904F3900FEC8A7 /* Field+CoreDataProperties.swift */,
 			);
 			name = Field;
+			sourceTree = "<group>";
+		};
+		A61C8C961D916E7B00B6B636 /* Onetime */ = {
+			isa = PBXGroup;
+			children = (
+				A61C8C9C1D916EEB00B6B636 /* Onetime+CoreDataClass.swift */,
+				A61C8C9D1D916EEB00B6B636 /* Onetime+CoreDataProperties.swift */,
+			);
+			name = Onetime;
+			sourceTree = "<group>";
+		};
+		A61C8C971D916E8600B6B636 /* Checkpoint */ = {
+			isa = PBXGroup;
+			children = (
+				A61C8C981D916EDF00B6B636 /* Checkpoint+CoreDataClass.swift */,
+				A61C8C991D916EDF00B6B636 /* Checkpoint+CoreDataProperties.swift */,
+			);
+			name = Checkpoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,19 +380,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D845981D910C5D00DC4DC4 /* Checkpoint+CoreDataProperties.swift in Sources */,
+				A61C8C9B1D916EDF00B6B636 /* Checkpoint+CoreDataProperties.swift in Sources */,
 				A6D845921D90FEA800DC4DC4 /* Statistics+CoreDataProperties.swift in Sources */,
 				A6D845911D90FEA800DC4DC4 /* Statistics+CoreDataClass.swift in Sources */,
-				A6D845991D910C5D00DC4DC4 /* Onetime+CoreDataClass.swift in Sources */,
+				A61C8C9E1D916EEB00B6B636 /* Onetime+CoreDataClass.swift in Sources */,
 				2080E2F11D904F3900FEC8A7 /* Field+CoreDataProperties.swift in Sources */,
 				2080E28D1D902D5000FEC8A7 /* ViewController.swift in Sources */,
-				A6D8459A1D910C5D00DC4DC4 /* Onetime+CoreDataProperties.swift in Sources */,
+				A61C8C9F1D916EEB00B6B636 /* Onetime+CoreDataProperties.swift in Sources */,
 				2080E28B1D902D5000FEC8A7 /* AppDelegate.swift in Sources */,
 				2080E2E81D90493400FEC8A7 /* StatisticsController.swift in Sources */,
 				2080E2F41D90550800FEC8A7 /* CoreDataStack.swift in Sources */,
 				2080E2C21D9030E000FEC8A7 /* iStatistics.xcdatamodeld in Sources */,
 				2080E2F01D904F3900FEC8A7 /* Field+CoreDataClass.swift in Sources */,
-				A6D845971D910C5D00DC4DC4 /* Checkpoint+CoreDataClass.swift in Sources */,
+				A61C8C9A1D916EDF00B6B636 /* Checkpoint+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,10 +650,11 @@
 		2080E2C01D9030E000FEC8A7 /* iStatistics.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A61C8CA01D9172BE00B6B636 /* iStatisticsV2.xcdatamodel */,
 				2080E2F21D90507E00FEC8A7 /* iStatistics.xcdatamodel */,
 				2080E2C11D9030E000FEC8A7 /* test.xcdatamodel */,
 			);
-			currentVersion = 2080E2F21D90507E00FEC8A7 /* iStatistics.xcdatamodel */;
+			currentVersion = A61C8CA01D9172BE00B6B636 /* iStatisticsV2.xcdatamodel */;
 			path = iStatistics.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
