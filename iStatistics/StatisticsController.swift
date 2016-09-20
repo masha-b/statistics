@@ -11,15 +11,51 @@ import CoreData
 
 class StatisticsController {
     
-    var statList:[Statistics]!
-    var sort:NSString = "typeRow"
-    let coreDataStack = CoreDataStack()
+    enum Rank: Int {
+        case two = 2, three, four, five, six, seven, eight, nine, ten
+        case jack, queen, king, ace
+        
+        struct Values {
+            let first: Int, second: Int?
+        }
+        var values: Values {
+            switch self {
+            case .ace:
+                return Values(first: 1, second: 11)
+            case .jack, .queen, .king:
+                return Values(first: 10, second: nil)
+            default:
+                return Values(first: self.rawValue, second: nil)
+            }
+        }
+    }
     
-    //let entity = NSEntityDescription.entityForName("Statistics", inManagedObjectContext: context)
+    enum StatisticsSort {
+        
+        enum SortAsccending {
+            case Asc, Desc
+        }
+        case SortByTitle(sortAsccending: SortAsccending)
+        case SortBySection(sortAsccending: SortAsccending)
+        
+        var descriptors:[NSSortDescriptor] {
+            switch self {
+            case .SortByTitle(sortAsccending: .Asc):
+                return [NSSortDescriptor(key: "title", ascending: true)]
+            case .SortByTitle(sortAsccending: .Desc):
+                return [NSSortDescriptor(key: "title", ascending: false)]
+            case .SortBySection(sortAsccending: .Asc):
+                return [NSSortDescriptor(key: "sectionRaw", ascending: true), NSSortDescriptor(key: "title", ascending: true)]
+            case .SortBySection(sortAsccending: .Desc):
+                return [NSSortDescriptor(key: "sectionRaw", ascending: false), NSSortDescriptor(key: "title", ascending: true)]
+            }
+        }
+    }
     
-    //let context = CoreDataStack().persistentContainer.viewContext
-    //let request = NSFetchRequest(entityName:"Album")
-    //var manager = CoreDataManager.instance.fetchedResultsController("Statistics", keyForSort: "type")
+    var sort = StatisticsSort.SortBySection(sortAsccending: .Asc)
+    var list:[Statistics] = [Statistics]()
+    let coreDataStack = CoreDataStack.instance
+    
     static let instance = StatisticsController()
     
     private init() {
@@ -28,11 +64,12 @@ class StatisticsController {
     
     func initStatistics() {
         
-        let context = coreDataStack.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Statistics", in: context)
-        let car = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! Car
-        car.name = "Ferrari"
+        let request:NSFetchRequest<Statistics> = Statistics.fetchRequest()
+        request.sortDescriptors = self.sort.descriptors
         
-        self.statList = CoreDataManager.instance.fetchedResultsController("Statistics", keyForSort: "type")
+        do {
+            self.list = try CoreDataStack.instance.persistentContainer.viewContext.fetch(request)
+        } catch {}
+        
     }
 }

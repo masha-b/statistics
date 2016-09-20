@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -19,22 +20,30 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func loadTestData() {
         if let path = Bundle.main.path(forResource: "testData", ofType: "json") {
             do {
-                let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
-                do {
-                    let jsonResult: NSDictionary = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-                    
-                    if let statistics : [NSDictionary] = jsonResult["statistics"] as? [NSDictionary] {
-                        for stat: NSDictionary in statistics {
-                            print("\(stat)")
+                if let data:NSData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe) as NSData? {
+                    do {
+                        let jsonData = try (JSONSerialization.jsonObject(with: data as Data, options: []) as? NSDictionary)!
+                        
+                        if let statistics : [NSDictionary] = jsonData["statistics"] as? [NSDictionary] {
+                            var results:[Statistics] = [Statistics]()
+                            for stat: NSDictionary in statistics {
+                                let _stat:Statistics = Statistics.withDictionary(data: stat)
+                                _stat.save()
+                            }
+                            StatisticsController.instance.sort = StatisticsController.StatisticsSort.SortByTitle(sortAsccending: .Asc)
+                            StatisticsController.instance.initStatistics()
+                            results = StatisticsController.instance.list
+                            for _statistics: Statistics in results {
+                                print(_statistics.section.title + " * " + _statistics.title!)
+                            }
                         }
-                    }
-                } catch {}
+                    } catch {}
+                }
             } catch {}
         }
     }

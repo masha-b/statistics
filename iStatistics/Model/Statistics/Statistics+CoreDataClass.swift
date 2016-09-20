@@ -1,16 +1,16 @@
 //
-//  Statistics.swift
-//  test
+//  Statistics+CoreDataClass.swift
+//  iStatistics
 //
-//  Created by Anna Lazareva on 19/09/16.
-//  Copyright © 2016 Anna Lazareva. All rights reserved.
+//  Created by Anna Lazareva on 20/09/16.
+//  Copyright © 2016 Maria Biryukova. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-enum StatisticsSection:NSNumber {
-    case Daily, Sprint, Other
+enum SectionType:Int16 {
+    case Daily=1, Sprint, Other
     
     var title: String {
         switch self {
@@ -18,14 +18,14 @@ enum StatisticsSection:NSNumber {
             return "Ежедневная"
         case .Sprint:
             return "Спринт"
-        default:
-            return "Другое"
+        case .Other:
+            return "Другое"            
         }
     }
 }
 
-enum StatisticsSettingsViewType:NSNumber {
-    case DailyIncrease, AverageValue, AverageIncrease, Summ
+enum ResultType:NSNumber {
+    case DailyIncrease=1, AverageValue, AverageIncrease, Summ
     
     var title: String {
         switch self {
@@ -41,25 +41,8 @@ enum StatisticsSettingsViewType:NSNumber {
     }
 }
 
-/*enum Wearable {
-    enum Weight: Int {
-        case Light = 1
-        case Mid = 4
-        case Heavy = 10
-    }
-    enum Armor: Int {
-        case Light = 2
-        case Strong = 8
-        case Heavy = 20
-    }
-    case Helmet(weight: Weight, armor: Armor)
-    case Breastplate(weight: Weight, armor: Armor)
-    case Shield(weight: Weight, armor: Armor)
-}
-let woodenHelmet = Wearable.Helmet(weight: .Light, armor: .Light)*/
-
-enum StatisticsType:NSNumber {
-    enum RangeOptionType:NSNumber {
+enum StatisticsType:Int16 {
+    enum RangeOptionType:Int16 {
         case Min, Max, Step
         var title: String {
             switch self {
@@ -73,7 +56,7 @@ enum StatisticsType:NSNumber {
         }
     }
     
-    enum ValueOptionType:NSNumber {
+    enum ValueOptionType:Int16 {
         case Integer, Decimal, Date
         var title: String {
             switch self {
@@ -87,7 +70,7 @@ enum StatisticsType:NSNumber {
         }
     }
     
-    case Value, YesOrNo, Range, Timer
+    case Value=1, YesOrNo, Range, Timer
     
     var title: String {
         switch self {
@@ -102,7 +85,7 @@ enum StatisticsType:NSNumber {
         }
     }
     
-    var options:[NSNumber] {
+    var options:[Int16] {
         switch self {
         case .YesOrNo:
             return []
@@ -123,22 +106,31 @@ struct StatisticsSettings {
         case OtherResult = "otherResult"
     }
     
-    var mainResult: StatisticsSettingsViewType = .AverageIncrease
-    var results:[StatisticsSettingsViewType] = [StatisticsSettingsViewType]()
+    var mainResult: ResultType = .AverageIncrease
+    var results:[ResultType] = [ResultType]()
     
     init(string: String) {
-        if let data = string.data(using: String.Encoding.utf8) {
+        
+        if let data:NSData = string.data(using: String.Encoding.utf8)! as NSData? {
             do {
-                let dictionary = try (JSONSerialization.jsonObject(with: data, options: []) as? [SettingOption:AnyObject])!
-                self.mainResult = dictionary[.MainResult] as! StatisticsSettingsViewType
-                self.results = dictionary[.OtherResult] as! [StatisticsSettingsViewType]
-            } catch {}
+                let dictionary = try (JSONSerialization.jsonObject(with: data as Data, options: []) as? [SettingOption:AnyObject])!
+                self.mainResult = dictionary[.MainResult] as! ResultType
+                self.results = dictionary[.OtherResult] as! [ResultType]
+            } catch {
+                self.mainResult = .AverageValue
+                self.results = [ResultType]()
+            }
         }
     }
     
+    init() {
+        self.mainResult = .AverageValue
+        self.results = [ResultType]()
+    }
+    
     init(dictionary: [SettingOption:AnyObject]) {
-        self.mainResult = dictionary[.MainResult] as! StatisticsSettingsViewType
-        self.results = dictionary[.OtherResult] as! [StatisticsSettingsViewType]
+        self.mainResult = dictionary[.MainResult] as! ResultType
+        self.results = dictionary[.OtherResult] as! [ResultType]
     }
     
     func jsonString() -> String{
@@ -150,7 +142,18 @@ struct StatisticsSettings {
             if let data : NSData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted) as NSData?{
                 return NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as! String
             }
-            
+        }
+        catch {
+            return ""
+        }
+        return ""
+    }
+    
+    func jsonString(dictionary:NSDictionary) -> String{
+        do {
+            if let data : NSData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted) as NSData?{
+                return NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) as! String
+            }
         }
         catch {
             return ""
@@ -160,24 +163,47 @@ struct StatisticsSettings {
     
 }
 
-class Statistics: NSManagedObject {
+
+public class Statistics: NSManagedObject {
     
-    var section:StatisticsSection {
-        if self.sectionRaw != nil {
-            return StatisticsSection(rawValue: self.sectionRaw!)!
+    static func withDictionary(data:NSDictionary!)-> Statistics {
+        let newStatistics = Statistics(context: CoreDataStack.instance.persistentContainer.viewContext)
+        return newStatistics.initWithDictionary(data: data)
+    }
+    
+    var section:SectionType {
+        if self.sectionRaw > 0 {
+            return SectionType(rawValue: self.sectionRaw)!
         }
         return .Other
     }
     
     var type:StatisticsType {
-        if self.typeRaw != nil {
-            return StatisticsType(rawValue: self.typeRaw!)!
+        if self.typeRaw > 0 {
+            return StatisticsType(rawValue: self.typeRaw)!
         }
         return .Value
     }
     
     var settings:StatisticsSettings {
-        return StatisticsSettings(string:self.settingsRaw!)
+        if self.settingsRaw != nil {
+            return StatisticsSettings(string:self.settingsRaw!)
+        }
+        return StatisticsSettings()
+    }
+    
+    func initWithDictionary(data:NSDictionary!)-> Statistics {
+        //self.base = data["base"] as! Int64
+        self.setValue(data["base"], forKey: "base")
+        self.setValue(data["desc"], forKey: "desc")
+        self.setValue(data["sectionRaw"], forKey: "sectionRaw")
+        self.setValue(data["title"], forKey: "title")
+        self.setValue(data["typeRaw"], forKey: "typeRaw")
+        self.setValue(data["unit"], forKey: "unit")
+        
+        let settingsString = self.settings.jsonString(dictionary: data["settingsRaw"] as! NSDictionary)
+        self.setValue(settingsString, forKey: "settingsRaw")
+        return self
     }
     
     func save() {
@@ -188,5 +214,5 @@ class Statistics: NSManagedObject {
             print(saveError)
         }
     }
-    
+
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G31" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Checkpoint" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Checkpoint" representedClassName=".Checkpoint" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="onetime" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Onetime" inverseName="checkpoints" inverseEntity="Onetime" syncable="YES"/>
@@ -11,11 +11,11 @@
         <attribute name="sort" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="statistics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Statistics" inverseName="fields" inverseEntity="Statistics" syncable="YES"/>
+        <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistics" inverseName="fields" inverseEntity="Statistics" syncable="YES"/>
     </entity>
-    <entity name="Onetime" syncable="YES">
+    <entity name="Onetime" representedClassName=".Onetime" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="checkpoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Checkpoint" inverseName="onetime" inverseEntity="Checkpoint" syncable="YES"/>
+        <relationship name="checkpoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Checkpoint" inverseName="onetime" inverseEntity="Checkpoint" syncable="YES"/>
         <relationship name="statistics" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Statistics" inverseName="onetimes" inverseEntity="Statistics" syncable="YES"/>
     </entity>
     <entity name="Statistics" representedClassName=".Statistics" syncable="YES">
@@ -26,8 +26,8 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="typeRaw" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="fields" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Field" inverseName="statistics" inverseEntity="Field" syncable="YES"/>
-        <relationship name="onetimes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Onetime" inverseName="statistics" inverseEntity="Onetime" syncable="YES"/>
+        <relationship name="fields" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Field" inverseName="statistics" inverseEntity="Field" syncable="YES"/>
+        <relationship name="onetimes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Onetime" inverseName="statistics" inverseEntity="Onetime" syncable="YES"/>
     </entity>
     <elements>
         <element name="Checkpoint" positionX="-180" positionY="45" width="128" height="90"/>

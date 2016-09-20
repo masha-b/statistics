@@ -1,6 +1,9 @@
 
 import CoreData
 class CoreDataStack {
+    
+    static let instance = CoreDataStack()
+    
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {

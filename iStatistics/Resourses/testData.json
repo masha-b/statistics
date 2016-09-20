@@ -1,10 +1,9 @@
 {
-    "statistics": [
-                   {
+    "statistics": [{
                    "base": 0,
                    "desc": "Что-нибудь",
-                   "sectionRaw": 0,
-                   "settingsRaw": "",
+                   "sectionRaw": 3,
+                   "settingsRaw": {},
                    "title": "Стат 1",
                    "typeRaw": 2,
                    "unit": "руб."
@@ -12,8 +11,8 @@
                    {
                    "base": 0,
                    "desc": "Что-нибудь",
-                   "sectionRaw": 0,
-                   "settingsRaw": "",
+                   "sectionRaw": 3,
+                   "settingsRaw": {},
                    "title": "Стат 4",
                    "typeRaw": 2,
                    "unit": "руб."
@@ -21,15 +20,8 @@
                    {
                    "base": 0,
                    "desc": "Что-нибудь",
-                   "sectionRaw": 0,
-                   "settingsRaw": {
-                        "mainResult": 0,
-                        "otherResult": [
-                                        1,
-                                        2,
-                                        3
-                                        ]
-                        },
+                   "sectionRaw": 3,
+                   "settingsRaw": {"mainResult": 0, "otherResult": [1, 2, 3]},
                    "title": "Стат 3",
                    "typeRaw": 0,
                    "unit": "шт."
@@ -37,25 +29,20 @@
                    {
                    "base": 5889,
                    "desc": "Что-нибудь",
-                   "sectionRaw": 0,
-                   "settingsRaw": {
-                        "mainResult": 1
-                        },
+                   "sectionRaw": 2,
+                   "settingsRaw": {"mainResult": 1},
                    "title": "Стат (таймер)",
                    "typeRaw": 3,
                    "unit": ""
-                   }
-                   ,
+                   },
                    {
-                   "base": 0,
+                   "base": 2,
                    "desc": "Что-нибудь",
-                   "sectionRaw": 0,
-                   "settingsRaw": {
-                        "mainResult": 1
-                        },
-                   "title": "Стат (да\нет)",
+                   "sectionRaw": 1,
+                   "settingsRaw": {"mainResult": 1},
+                   "title": "Стат (да/нет)",
                    "typeRaw": 1,
                    "unit": ""
-                   }
-                   ]
+                   },
+    ]
 }
